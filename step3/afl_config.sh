@@ -37,7 +37,7 @@ esac
 ## Helper functions
 
 function find_func() {
-    objdump -t "$target_path" | awk -n /"$1"'$/{print "0x"$1, "0x"$5}'
+    objdump -t "$target_path" | awk /"$1"'$/{print "0x"$1, "0x"$5}'
 }
 function hex_encode() {
     printf "0x%x" "$1"
